@@ -1,0 +1,32 @@
+<h1>Alumnos</h1>
+<p>
+	Esta es la página de Alumnos
+</p>
+<div class="row" align="right">
+	<a href="#/alumno/nuevo" class="btn btn-info">Crear Alumno</a>
+</div>
+
+<br>
+<div class="row">
+	<table class="table table-striped">
+		<tr>
+			<th>Código</th>
+			<th>Nombre</th>
+			<th>Teléfono</th>
+			<th>Ver</th>
+		</tr>
+		<tr ng-repeat="alumno in alumnos | limitTo:posicion | limitTo: -5">
+			<td>{{alumno.codigo}}</td>
+			<td>{{alumno.nombre}}</td>
+			<td>{{alumno.telefono | telefono }}</td>
+			<td><a href="#/alumno/{{alumno.codigo}}">Ver registro</a></td>
+		</tr>
+	</table>
+</div>
+<button class="btn btn-primary" ng-click="anteriores()">anteriores</button>
+<button class="btn btn-primary" ng-click="siguientes()">siguientes</button>
+
+<hr>
+
+
+<!--{{alumnos | json}}-->
